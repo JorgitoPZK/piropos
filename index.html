@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piropos de Enfermería y Canciones de Tiago PZK</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ff6666;
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        #piropo, #cancion {
+            color: #b30000;
+            font-size: 1.8em;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        button {
+            background-color: #ff9999;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #ff6666;
+        }
+
+        a {
+            color: #ff6666;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #b30000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola preciosa, puchale a los botones y ve la magia uwu (tqm ❤️)</h1>
+    <p>Presiona los botones para obtener un piropo o una canción de Tiago PZK</p>
+    
+    <!-- Sección del piropo -->
+    <div id="piropo">¡Tu piropo aparecerá aquí!</div>
+    <button onclick="generarPiropo()">💖 Generar Piropo 💖</button>
+    
+    <!-- Sección de la canción -->
+    <div id="cancion">¡Tu canción de Tiago PZK aparecerá aquí!</div>
+    <button onclick="generarCancion()">🎶 Generar Canción de Tiago PZK 🎶</button>
+
+    <script>
+        // Lista de 30 piropos de enfermería
+        const piropos = [
+            "Contigo no necesito pastillas, porque tu sonrisa me sana el alma.",
+            "Eres como una enfermera, porque solo con verte ya me siento mejor.",
+            "Si fuera paciente, pediría que tú fueras mi enfermera para que me cures con tu amor.",
+            "Eres la inyección de alegría que mi vida necesita todos los días.",
+            "Contigo no hay urgencias, porque tu amor es la mejor medicina.",
+            "¿Eres enfermera? Porque cada vez que me miras, me subes las pulsaciones.",
+            "Deberían recetarte, porque eres el mejor remedio para cualquier mal.",
+            "No necesito un desfibrilador, porque tu sonrisa ya revive mi corazón.",
+            "Tu amor es como una cura intensiva, me tiene en las nubes.",
+            "Si fueras mi enfermera, me enfermaría todos los días solo para verte.",
+            "Eres mi analgésico favorito, me quitas el dolor solo con tu presencia.",
+            "Tú eres el oxígeno que necesito para vivir, sin ti no respiro igual.",
+            "Si la salud fuera amor, tú serías mi medicina diaria.",
+            "Eres como un parche para el corazón, me curas sin dejar cicatriz.",
+            "Contigo no necesito de un electro, porque tú ya controlas los latidos de mi corazón.",
+            "Si fueras una vacuna, me la pondría una y otra vez para no perderte nunca.",
+            "Tu amor es como un antibiótico, actúa rápido y me cura por completo.",
+            "Eres la enfermera de mis sueños, siempre lista para sanar mi corazón.",
+            "Si tú fueras enfermera en un hospital, todos querríamos estar enfermos solo para verte.",
+            "Eres la vitamina que necesito para estar fuerte todos los días.",
+            "Me haces sentir tan bien que hasta mis radiografías mostrarían corazones por todas partes.",
+            "Si fueras una receta médica, te guardaría para toda la vida.",
+            "Eres la solución a todos mis males, como un tratamiento infalible de amor.",
+            "No me hace falta una ambulancia, porque tú ya llegaste a mi vida para salvarme.",
+            "Eres como un estetoscopio para mí, escuchas mi corazón mejor que nadie.",
+            "Tu sonrisa tiene más efecto que cualquier medicamento en el mundo.",
+            "Con tu amor, ni la UCI puede ser tan intensa como lo que siento por ti.",
+            "Contigo no hay diagnósticos malos, solo amores eternos.",
+            "Eres como una inyección de energía y amor que siempre me revitaliza.",
+            "Si fueras una enfermera de guardia, no me importaría quedarme en el hospital solo para verte."
+        ];
+
+        // Lista de canciones de Tiago PZK (con enlaces a YouTube)
+        const canciones = [
+            { titulo: "Nadie Más", url: "https://www.youtube.com/watch?v=m6FEBds1vkE" },
+            { titulo: "Entre Nosotros", url: "https://www.youtube.com/watch?v=tAJVDe205tM" },
+            { titulo: "Borracho", url: "https://www.youtube.com/watch?v=Nji9yRXhWls" },
+            { titulo: "Hablando de Love", url: "https://www.youtube.com/watch?v=Q01OW-t2Q-g" },
+            { titulo: "Piel", url: "https://www.youtube.com/watch?v=DI71FIdguUs" },
+            { titulo: "En la oscuridad", url: "https://www.youtube.com/watch?v=H0ZMzsE9Iro" },
+            { titulo: "Bemaste", url: "https://www.youtube.com/watch?v=PlyL4LaH9zU" },
+            { titulo: "Sabor a miel", url: "https://www.youtube.com/watch?v=tbgd_qmfqSI" },
+            { titulo: "Mi corazón", url: "https://www.youtube.com/watch?v=3feGplfiR9M" },
+            { titulo: "Alegria", url: "https://www.youtube.com/watch?v=6-YPVUgAO3I" }
+        ];
+
+        // Función para generar un piropo aleatorio
+        function generarPiropo() {
+            const piropo = piropos[Math.floor(Math.random() * piropos.length)];
+            document.getElementById('piropo').innerText = piropo;
+        }
+
+        // Función para generar una canción aleatoria de Tiago PZK
+        function generarCancion() {
+            const cancion = canciones[Math.floor(Math.random() * canciones.length)];
+            document.getElementById('cancion').innerHTML = `Esta cancion <a href="${cancion.url}" target="_blank">${cancion.titulo}</a> me recuerda a ti ❤️.`;
+        }
+    </script>
+</body>
+</html>
